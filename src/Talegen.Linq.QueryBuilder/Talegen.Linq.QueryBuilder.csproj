@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+     <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title></Title>
+    <Version>1.0.0</Version>
+    <Company>Talegen, LLC</Company>
+    <Authors>TalegenInc</Authors>
+    <Copyright>Copyright (c) Talegen, LLC. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ad-hoc;query;LINQ</PackageTags>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <Description>This library provides mechanisms to convert ad-hoc queries defined in model form into Linq expression trees for use in Linq to SQL and other query mechanisms.</Description>
+    <PackageIcon>logo.png</PackageIcon>
+    <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Talegen.Linq.QueryBuilder.Models\Talegen.Linq.QueryBuilder.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
