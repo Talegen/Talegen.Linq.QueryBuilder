@@ -8,7 +8,7 @@
     /// This class implement Implements the <see cref="ISearchConfiguration" /> interface.
     /// </summary>
     /// <seealso cref="Talegen.Linq.QueryBuilder.Configuration.ISearchConfiguration" />
-    internal abstract class SearchConfigurationBase : ISearchConfiguration
+    public abstract class SearchConfigurationBase : ISearchConfiguration
     {
         /// <summary>
         /// Gets or sets a value indicating whether the LINQ is being converted to an SQL provider.
