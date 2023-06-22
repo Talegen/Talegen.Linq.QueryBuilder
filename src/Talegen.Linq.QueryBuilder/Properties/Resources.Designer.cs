@@ -59,5 +59,95 @@ namespace Talegen.Linq.QueryBuilder.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to And.
+        /// </summary>
+        internal static string LabelAndText {
+            get {
+                return ResourceManager.GetString("LabelAndText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contains.
+        /// </summary>
+        internal static string LabelContainsText {
+            get {
+                return ResourceManager.GetString("LabelContainsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does Not Contain.
+        /// </summary>
+        internal static string LabelDoesNotContainText {
+            get {
+                return ResourceManager.GetString("LabelDoesNotContainText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does Not End With.
+        /// </summary>
+        internal static string LabelDoesNotEndWithText {
+            get {
+                return ResourceManager.GetString("LabelDoesNotEndWithText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does Not Start With.
+        /// </summary>
+        internal static string LabelDoesNotStartWithText {
+            get {
+                return ResourceManager.GetString("LabelDoesNotStartWithText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ends With.
+        /// </summary>
+        internal static string LabelEndsWithText {
+            get {
+                return ResourceManager.GetString("LabelEndsWithText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string LabelNoText {
+            get {
+                return ResourceManager.GetString("LabelNoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Or.
+        /// </summary>
+        internal static string LabelOrText {
+            get {
+                return ResourceManager.GetString("LabelOrText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starts With.
+        /// </summary>
+        internal static string LabelStartsWithText {
+            get {
+                return ResourceManager.GetString("LabelStartsWithText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string LabelYesText {
+            get {
+                return ResourceManager.GetString("LabelYesText", resourceCulture);
+            }
+        }
     }
 }

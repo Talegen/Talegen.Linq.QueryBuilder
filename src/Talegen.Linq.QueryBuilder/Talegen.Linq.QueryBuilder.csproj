@@ -25,13 +25,13 @@
 	  <AssemblyVersion>1.0.1</AssemblyVersion>
 	  <FileVersion>1.0.1</FileVersion>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
-	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <IncludeSymbols>True</IncludeSymbols>
 
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\logo.png" />
+    <None Remove="Properties\ResourceKeys.tt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,13 +39,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <Content Include="Properties\ResourceKeys.tt">
+      <LastGenOutput>ResourceKeys.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -54,13 +51,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Talegen.Linq.QueryBuilder.Models\Talegen.Linq.QueryBuilder.Models.csproj">
-	    <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-	    <IncludeAssets>Talegen.Linq.QueryBuilder.Models.dll</IncludeAssets>
-    </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Update="Properties\ResourceKeys.cs">
+      <DependentUpon>ResourceKeys.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -73,6 +68,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

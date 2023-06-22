@@ -4,7 +4,7 @@
 //     Copyright (c) Talegen, LLC. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Talegen.Linq.QueryBuilder.Models.Properties
+namespace Talegen.Linq.QueryBuilder.Properties
 {
     /// <summary>
     /// This class is automatically generated and will create resource keys for use within the application.

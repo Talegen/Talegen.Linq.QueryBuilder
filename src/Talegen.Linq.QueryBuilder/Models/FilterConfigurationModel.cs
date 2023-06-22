@@ -20,8 +20,8 @@ namespace Talegen.Linq.QueryBuilder.Models
     using System.ComponentModel;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+    using Properties;
     using Talegen.Common.Core.Attributes;
-    using Talegen.Linq.QueryBuilder.Models.Properties;
 
     /// <summary>
     /// Contains an enumerated selection list of filter field data types.
