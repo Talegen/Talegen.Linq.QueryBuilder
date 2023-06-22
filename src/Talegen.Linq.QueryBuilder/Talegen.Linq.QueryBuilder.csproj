@@ -28,7 +28,6 @@
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <IncludeSymbols>True</IncludeSymbols>
 
-	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -76,9 +75,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
-		<ItemGroup>
-			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
-		</ItemGroup>
-	</Target>
 </Project>
