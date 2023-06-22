@@ -19,22 +19,13 @@
     <RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <IncludeSymbols>True</IncludeSymbols>
+    <IncludeSymbols>False</IncludeSymbols>
+    <IsPublishable>False</IsPublishable>
    
   </PropertyGroup>
-	<ItemGroup>
-		<None Remove="Assets\logo.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="Assets\logo.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</Content>
-	</ItemGroup>
   
 	<ItemGroup>
     <Content Include="Properties\ResourceKeys.tt">
