@@ -13,7 +13,7 @@
     <PackageProjectUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>ad-hoc;query;LINQ</PackageTags>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Misc bug fixes.</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <EnableNETAnalyzers>False</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
