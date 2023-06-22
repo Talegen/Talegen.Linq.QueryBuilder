@@ -5,9 +5,9 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title></Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Company>Talegen, LLC</Company>
-    <Authors>TalegenInc</Authors>
+    <Authors>Talegen, LLC</Authors>
     <Copyright>Copyright (c) Talegen, LLC. All rights reserved.</Copyright>
     <RepositoryUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</PackageProjectUrl>
@@ -21,6 +21,14 @@
     <Description>This library provides mechanisms to convert ad-hoc queries defined in model form into Linq expression trees for use in Linq to SQL and other query mechanisms.</Description>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
     <PackageIcon>logo.png</PackageIcon>
+	  <Version>1.0.1</Version>
+	  <AssemblyVersion>1.0.1</AssemblyVersion>
+	  <FileVersion>1.0.1</FileVersion>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <IncludeSymbols>True</IncludeSymbols>
+
+	  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,11 +43,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Talegen.Linq.QueryBuilder.Models\Talegen.Linq.QueryBuilder.Models.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Talegen.Common.Core" Version="1.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Talegen.Linq.QueryBuilder.Models\Talegen.Linq.QueryBuilder.Models.csproj">
+	    <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+	    <IncludeAssets>Talegen.Linq.QueryBuilder.Models.dll</IncludeAssets>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -57,5 +76,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
-
+	<Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
 </Project>

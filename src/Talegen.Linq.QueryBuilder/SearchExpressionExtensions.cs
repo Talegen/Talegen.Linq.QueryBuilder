@@ -21,7 +21,7 @@ namespace Talegen.Linq.QueryBuilder
     using System.Globalization;
     using System.Linq;
     using System.Linq.Expressions;
-    using Common.Core.Extensions;
+    using Talegen.Common.Core.Extensions;
     using Talegen.Linq.QueryBuilder;
     using Talegen.Linq.QueryBuilder.Configuration;
     using Talegen.Linq.QueryBuilder.Models;
