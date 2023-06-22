@@ -3,7 +3,6 @@
   <PropertyGroup>
 	  <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>Talegen, LLC</Authors>
     <Company>Talegen, LLC</Company>
     <Description>This library contains shared models for implementing an ad-hoc query builder interface and for ingesting queries into the LINQ QueryBuilder engine.</Description>
