@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title></Title>
-    <Version>1.0.1</Version>
     <Company>Talegen, LLC</Company>
     <Authors>Talegen, LLC</Authors>
     <Copyright>Copyright (c) Talegen, LLC. All rights reserved.</Copyright>
