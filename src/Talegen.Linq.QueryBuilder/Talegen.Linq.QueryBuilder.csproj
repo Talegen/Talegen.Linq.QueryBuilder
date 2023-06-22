@@ -21,9 +21,9 @@
     <Description>This library provides mechanisms to convert ad-hoc queries defined in model form into Linq expression trees for use in Linq to SQL and other query mechanisms.</Description>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
     <PackageIcon>logo.png</PackageIcon>
-	  <Version>1.0.1</Version>
-	  <AssemblyVersion>1.0.1</AssemblyVersion>
-	  <FileVersion>1.0.1</FileVersion>
+	  <Version>1.0.2</Version>
+	  <AssemblyVersion>1.0.2</AssemblyVersion>
+	  <FileVersion>1.0.2</FileVersion>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	  <IncludeSymbols>True</IncludeSymbols>
 
