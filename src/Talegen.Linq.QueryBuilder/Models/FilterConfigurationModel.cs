@@ -18,6 +18,7 @@ namespace Talegen.Linq.QueryBuilder.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Linq;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Properties;
@@ -154,6 +155,35 @@ namespace Talegen.Linq.QueryBuilder.Models
     /// </summary>
     public class FilterConfigurationModel
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterConfigurationModel" /> class.
+        /// </summary>
+        public FilterConfigurationModel()
+        {
+            this.Operators = new List<KeyValuePair<SearchExpressionOperator, string>>();
+            this.ValidValues = new List<KeyValuePair<string, string>>();
+            this.DataType = SearchConfigurationDataType.String;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterConfigurationModel" /> class.
+        /// </summary>
+        /// <param name="fieldId">The field identifier.</param>
+        /// <param name="displayName">The display name.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="validValues">The valid values.</param>
+        /// <param name="compareExists">if set to <c>true</c> [compare exists].</param>
+        /// <param name="overrideOperators">The override operators.</param>
+        public FilterConfigurationModel(string fieldId, string displayName, SearchConfigurationDataType type = SearchConfigurationDataType.String, List<KeyValuePair<string, string>> validValues = null, bool compareExists = false, Dictionary<SearchExpressionOperator, string> overrideOperators = null)
+        {
+            this.FieldId = fieldId;
+            this.DisplayName = displayName;
+            this.DataType = type;
+            this.CompareExists = compareExists;
+            this.Operators = overrideOperators?.Select(d => new KeyValuePair<SearchExpressionOperator, string>(d.Key, d.Value)).ToList() ?? QueryConfigurationDefaults.TypeOperators(type);
+            this.ValidValues = validValues ?? new List<KeyValuePair<string, string>>();
+        }
+
         /// <summary>
         /// Gets or sets the field identity.
         /// </summary>
