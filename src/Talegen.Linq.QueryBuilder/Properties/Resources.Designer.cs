@@ -61,6 +61,15 @@ namespace Talegen.Linq.QueryBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The entity of type \&quot;{0}\&quot; does not contain a property \&quot;{1}\&quot;. Please ensure your Query configuration is using the correct fieldId matching the queryable object property path..
+        /// </summary>
+        internal static string ErrorMissingPropertyText {
+            get {
+                return ResourceManager.GetString("ErrorMissingPropertyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to And.
         /// </summary>
         internal static string LabelAndText {

@@ -35,8 +35,9 @@ namespace Talegen.Linq.QueryBuilder
         /// This method is used to convert a <see cref="SearchExpressionOperator" /> to a <see cref="ComparisonOperatorType" /> value.
         /// </summary>
         /// <param name="operatorValue">Contains the <see cref="SearchExpressionOperator" /> to convert.</param>
+        /// <param name="useSqlLikeForContains">Contains a value indicating if a Like operator is used for Contains search operators instead of similar contains.</param>
         /// <returns>Returns the <see cref="ComparisonOperatorType" /> equivalent value.</returns>
-        public static ComparisonOperatorType ToComparisonOperator(SearchExpressionOperator operatorValue)
+        public static ComparisonOperatorType ToComparisonOperator(SearchExpressionOperator operatorValue, Boolean useSqlLikeForContains = false)
         {
             ComparisonOperatorType result = ComparisonOperatorType.Equal;
 
@@ -67,13 +68,11 @@ namespace Talegen.Linq.QueryBuilder
                     break;
 
                 case SearchExpressionOperator.Contains:
-                    ////result = ComparisonOperatorType.Like;
-                    result = ComparisonOperatorType.Contains;
+                    result = useSqlLikeForContains ? ComparisonOperatorType.Like : ComparisonOperatorType.Contains;
                     break;
 
                 case SearchExpressionOperator.DoesNotContain:
-                    ////result = ComparisonOperatorType.NotLike;
-                    result = ComparisonOperatorType.NotContains;
+                    result = useSqlLikeForContains ? ComparisonOperatorType.NotLike : ComparisonOperatorType.NotContains;
                     break;
 
                 case SearchExpressionOperator.StartsWith:
@@ -172,7 +171,7 @@ namespace Talegen.Linq.QueryBuilder
 
             foreach (var filterRow in filterRows)
             {
-                ComparisonOperatorType filterOperator = ToComparisonOperator(filterRow.Operator);
+                ComparisonOperatorType filterOperator = ToComparisonOperator(filterRow.Operator, configuration.SupportSqlProviderSyntax);
                 Type valueType = configuration.FilterValueType(filterRow.FilterId);
                 FilterConfigurationModel filterConfig = configuration.Configuration.FilterFields.FirstOrDefault(f => f.FieldId.Equals(filterRow.FilterId, StringComparison.OrdinalIgnoreCase));
                 bool existsCompare = filterConfig?.CompareExists ?? false;

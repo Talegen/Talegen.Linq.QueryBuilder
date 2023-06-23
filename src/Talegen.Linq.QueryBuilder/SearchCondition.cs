@@ -23,6 +23,7 @@ namespace Talegen.Linq.QueryBuilder
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
+    using Talegen.Common.Core.Properties;
 
     /// <summary>
     /// Contains an enumerated list of all the different comparisons which can be performed with LINQ expressions.
@@ -477,6 +478,12 @@ namespace Talegen.Linq.QueryBuilder
 
                 // Get the PropertyInfo instance for propName
                 var propertyInfo = typeof(T).GetProperty(parameterParts[0]);
+
+                if (propertyInfo == null)
+                {
+                    throw new Exception(string.Format(Properties.Resources.ErrorMissingPropertyText, typeof(T).ToString(), parameterParts[0]));
+                }
+
                 var parameterExpression = GetParamInstance(typeof(T));
                 var isList = propertyInfo.PropertyType.IsGenericType && propertyInfo.PropertyType.Name.Contains("List", StringComparison.Ordinal);
 
