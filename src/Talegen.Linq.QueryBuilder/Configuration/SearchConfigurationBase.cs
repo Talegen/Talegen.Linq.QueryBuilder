@@ -19,7 +19,7 @@
         /// <summary>
         /// Gets a the search field configuration definition.
         /// </summary>
-        public QueryConfigurationModel Configuration { get; }
+        public QueryConfigurationModel Configuration { get; protected set; }
 
         /// <summary>
         /// This method is used to return the value type of a specified filter identity.
