@@ -17,14 +17,12 @@ namespace Talegen.Linq.QueryBuilder.Models
 {
     using System.Collections.Generic;
     using Common.Core.Attributes;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
     using Properties;
 
     /// <summary>
     /// Gets or sets an enumerated list of available operators
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    
     public enum SearchLogicOperator
     {
         /// <summary>

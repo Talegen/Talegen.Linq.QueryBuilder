@@ -18,15 +18,14 @@ namespace Talegen.Linq.QueryBuilder.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+    using System.Text.Json.Serialization;
     using Properties;
     using Talegen.Common.Core.Attributes;
 
     /// <summary>
     /// Contains an enumerated selection list of filter field data types.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    
     public enum SearchConfigurationDataType
     {
         /// <summary>
@@ -73,7 +72,7 @@ namespace Talegen.Linq.QueryBuilder.Models
     /// <summary>
     /// Gets or sets an enumerated list of available operators
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    
     public enum SearchExpressionOperator
     {
         /// <summary>
