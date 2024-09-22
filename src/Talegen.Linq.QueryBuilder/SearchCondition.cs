@@ -1,7 +1,7 @@
 ﻿/*
  *
  * (c) Copyright Talegen, LLC.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,6 @@
  * limitations under the License.
  *
 */
-
 namespace Talegen.Linq.QueryBuilder
 {
     using System;
@@ -23,7 +22,7 @@ namespace Talegen.Linq.QueryBuilder
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
-    using Talegen.Common.Core.Properties;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Contains an enumerated list of all the different comparisons which can be performed with LINQ expressions.
@@ -476,8 +475,11 @@ namespace Talegen.Linq.QueryBuilder
                 // Split the string to handle nested property access
                 var parameterParts = propertyName.Split('.');
 
-                // Get the PropertyInfo instance for propName
-                var propertyInfo = typeof(T).GetProperty(parameterParts[0]);
+                // Get the PropertyInfo instance for propName, if not found, seek by data member name (for JSON schema)
+                var propertyInfo = typeof(T).GetProperty(parameterParts[0]) ??
+                                   typeof(T).GetProperties()
+                                       .Where(p => Attribute.IsDefined(p, typeof(DataMemberAttribute)))
+                                       .Single(p => ((DataMemberAttribute)Attribute.GetCustomAttribute(p, typeof(DataMemberAttribute))).Name == parameterParts[0]);
 
                 if (propertyInfo == null)
                 {
