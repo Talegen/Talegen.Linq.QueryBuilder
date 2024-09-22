@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/Talegen/Talegen.Linq.QueryBuilder</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>ad-hoc;query;LINQ</PackageTags>
-    <PackageReleaseNotes>Dependency updates. Removed Newtonsoft.Json</PackageReleaseNotes>
+    <PackageReleaseNotes>Dependency updates. Removed Newtonsoft.Json which may be a breaking change for some.</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <EnableNETAnalyzers>False</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
@@ -20,9 +20,9 @@
     <Description>This library provides mechanisms to convert ad-hoc queries defined in model form into Linq expression trees for use in Linq to SQL and other query mechanisms.</Description>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
     <PackageIcon>logo.png</PackageIcon>
-      <Version>1.0.7</Version>
-      <AssemblyVersion>1.0.7</AssemblyVersion>
-      <FileVersion>1.0.7</FileVersion>
+      <Version>1.1.0</Version>
+      <AssemblyVersion>1.1.0</AssemblyVersion>
+      <FileVersion>1.1.0</FileVersion>
       <GenerateDocumentationFile>True</GenerateDocumentationFile>
       <IncludeSymbols>True</IncludeSymbols>
 
@@ -45,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Talegen.Common.Core" Version="1.0.15" />
+    <PackageReference Include="Talegen.Common.Core" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
