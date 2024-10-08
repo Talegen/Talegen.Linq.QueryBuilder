@@ -20,9 +20,9 @@
     <Description>This library provides mechanisms to convert ad-hoc queries defined in model form into Linq expression trees for use in Linq to SQL and other query mechanisms.</Description>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
     <PackageIcon>logo.png</PackageIcon>
-      <Version>1.1.2</Version>
-      <AssemblyVersion>1.1.2</AssemblyVersion>
-      <FileVersion>1.1.2</FileVersion>
+      <Version>1.1.3</Version>
+      <AssemblyVersion>1.1.3</AssemblyVersion>
+      <FileVersion>1.1.3</FileVersion>
       <GenerateDocumentationFile>True</GenerateDocumentationFile>
       <IncludeSymbols>True</IncludeSymbols>
 
@@ -30,17 +30,12 @@
 
   <ItemGroup>
     <None Remove="Assets\logo.png" />
-    <None Remove="Properties\ResourceKeys.tt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </Content>
-    <Content Include="Properties\ResourceKeys.tt">
-      <LastGenOutput>ResourceKeys.cs</LastGenOutput>
-      <Generator>TextTemplatingFileGenerator</Generator>
     </Content>
   </ItemGroup>
 
@@ -51,9 +46,9 @@
 
   <ItemGroup>
     <Compile Update="Properties\ResourceKeys.cs">
-      <DependentUpon>ResourceKeys.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceKeys.tt</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -71,6 +66,13 @@
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\ResourceKeys.tt">
+      <LastGenOutput>ResourceKeys.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
